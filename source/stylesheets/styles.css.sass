@@ -1,0 +1,20 @@
+@charset "utf-8"
+
+@import "config/variables"
+@import "config/mixins"
+
+html
+  font-size: 100%
+  +breakpoint-down(sm)
+    font-size: 75%
+
+body
+  +font
+  color: $color-gray
+
+h1
+  +font
+  color: $color-gray
+
+a
+  color: $color-key
