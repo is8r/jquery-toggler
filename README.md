@@ -1,11 +1,3 @@
-oreore middleman template
-
-deploy gh-pages:
-
-```
-$ rake build && rake publish
-```
-
-open:
+demo:
 
 [https://is8r.github.io/jquery-toggler/](https://is8r.github.io/jquery-toggler/)
