@@ -18,7 +18,9 @@
     = stylesheet_link_tag 'https://fonts.googleapis.com/earlyaccess/notosansjapanese.css'
     = stylesheet_link_tag 'https://maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css'
     = stylesheet_link_tag 'https://code.jquery.com/ui/1.9.2/themes/base/jquery-ui.css'
-    = stylesheet_link_tag :styles
+    = stylesheet_link_tag :styles, :syntax
+
+    = javascript_include_tag 'jquery.toggler', :all
 
   %body{:class => page_classes}
 
@@ -27,5 +29,4 @@
         .col-xs-12.col-sm-12
           = yield
 
-    = javascript_include_tag :all
     = google_analytics_tag

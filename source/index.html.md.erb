@@ -1,0 +1,67 @@
+---
+title: Toggler
+---
+
+<h1>
+  <%= current_page.data.title || data.config.title%>
+  <small>(jQuery Plugin)</small>
+</h1>
+
+jsを書かなくても要素にデータ属性を指定するだけで目的の要素に対して指定したクラスをつけたり外したりしてくれるjQueryプラグインです。
+
+---
+
+## 使い方
+
+サンプルではクリックの度に要素を非表示にするセレクタ<code>.hidden-xs-up</code> が追加、削除されます。
+
+<div class="example">
+  <a href="#target" class="button" data-toggler="hidden-xs-up">link</a> or
+  <button role="button" class="button" data-toggler="hidden-xs-up" data-target="#target">button</button>
+  <div id="target" class="m-t-1 example-content">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</div>
+</div>
+<script type="text/javascript">
+// $('#target').on('on.toggler', function () {
+//   console.log('addClass');
+// });
+// $('#target').on('off.toggler', function () {
+//   console.log('removeClass');
+// });
+</script>
+
+``` html
+<a href="#target" data-toggler="hidden-xs-up" aria-controls="#target">link</a>
+<button role="button" data-toggler="hidden-xs-up" data-target="#target" aria-controls="#target">button</button>
+
+<div id="target">...</div>
+```
+
+---
+
+## イベント
+
+クラスが追加された時と外された時にそれぞれイベントが発生します。
+
+<table class="table table-bordered table-striped">
+  <tbody>
+   <tr>
+     <td>on.toggler</td>
+     <td>クラスが追加されたタイミングで発生するイベントです</td>
+   </tr>
+   <tr>
+     <td>off.toggler</td>
+     <td>クラスが削除されたタイミングで発生するイベントです</td>
+   </tr>
+  </tbody>
+</table>
+
+``` javascript
+$('#target').on('on.toggler', function () {
+  console.log('addClass');
+});
+$('#target').on('off.toggler', function () {
+  console.log('removeClass');
+});
+```
+
+<div class="m-t-3"></div>

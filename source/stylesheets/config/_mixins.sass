@@ -3,7 +3,7 @@
 $serif: 'ヒラギノ明朝 Pro W6','Hiragino Mincho Pro','HGS明朝E','ＭＳ Ｐ明朝',serif
 $sans: 'ヒラギノ角ゴ Pro W3','Hiragino Kaku Gothic Pro','メイリオ',Meiryo,'ＭＳ Ｐゴシック',sans-serif
 
-=font($size: 1rem, $line-height: normal, $weight: normal, $family: 'sans')
+=font($size: 1rem, $line-height: normal, $weight: normal, $family: 'serif')
   @if $family == "serif"
     font-family: YuMincho, '游明朝', $serif
   @else if $family == "sans"
@@ -26,3 +26,40 @@ $media-breakpoints: (xs: 0, sm: 34em, md: 48em, lg: 62em)
   @media (min-width: $map)
     @content
 
+=button-base($c: transparent)
+  box-sizing: border-box
+  box-shadow: none
+  appearance: none
+  display: inline-block
+  border-radius: 0
+  background-color: $c
+  background-image: linear-gradient(to top, $c, $c)
+  position: relative
+  cursor: pointer
+  text-align: center
+  font-weight: normal
+  margin: 0
+  padding: 0
+  border: none
+  outline: none
+  text-decoration: none
+  &:focus,
+  &:active,
+  &:hover
+    text-decoration: none !important
+  &:focus
+    outline: none
+
+=button($size: 1em, $p: 5px 20px, $c: #529ef6, $c-text: #fff, $r: 2px)
+  +button-base
+  font-size: $size
+  border-radius: $r
+  background: $c
+  color: $c-text
+  padding: $p
+  &:focus,
+  &:hover,
+  &:active,
+  &.is-current
+    background-color: darken($c, 10%)
+    color: $c-text

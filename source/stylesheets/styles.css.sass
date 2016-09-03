@@ -13,8 +13,50 @@ body
   color: $color-gray
 
 h1
-  +font
+  +font(1.4rem)
+  color: $color-gray
+  margin-top: 2rem
+  margin-bottom: 2rem
+
+h2
+  +font(1.2rem)
+  color: $color-gray
+  text-transform: uppercase
+
+small
+  +font(0.75rem)
+  color: $color-gray
+
+p, td
+  +font(1.0rem, 1.8rem)
   color: $color-gray
 
 a
+  +font
   color: $color-key
+
+hr
+  margin: 1.5rem auto
+  border-color: transparent
+
+.button
+  +button(0.9rem)
+
+.example
+  +font
+  padding: 20px
+  border: 1px solid #eee
+  border-radius: 3px 3px 0 0
+
+.example-content
+  +font(0.9rem, 1.8rem)
+  background: lighten($color-blue, 30%)
+  padding: 10px
+  color: $color-gray
+
+.highlight
+  font-size: 0.75rem
+  padding: 15px 20px
+  background: #f8f8f8
+  border-radius: 3px
+
