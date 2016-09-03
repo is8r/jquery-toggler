@@ -1,0 +1,1 @@
+$(function(){$("#targetA").on("on.toggler",function(){console.log("add")}),$("#targetA").on("off.toggler",function(){console.log("remove")})});
